@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="sitenotices.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-sitenotices.js" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	
+	//팝업 다시보기에 대한 쿠키를 삭제!
+	$("#sampleText").resetCookie("html");
+	$("#sampleText").resetCookie("image");
+	$("#sampleText").resetCookie("text");
+	$("#sampleText").resetCookie("combine");
+	
+	//HTML을 이용한 메세지 출력
+	$("#sampleText").notice("html", {
+		width : 400, 	  //너비 
+		offsetLeft : 10,  //좌측 기준 위치
+		offsetTop : 20,   //상단 기준 위치
+		zIndex : 3001 ,   //z-Index
+		fadeIn : 300,     //나타나는 속도 
+		fadeOut : 300 	  //사라지는 속도
+	});
+	
+	
+	//이미지를 이용한 출력
+	$("#sampleImage").notice("image", {
+		offsetLeft : 10,
+		offsetTop : 200,
+		zIndex : 4000  
+	});
+	
+	//
+	$("<div></div>").html("테스트 메세지").notice("text" , {
+		offsetLeft : 10,
+		offsetTop : 200,
+		zIndex : 5000   //z-Index
+	});
+	
+	//여러 Dom을 합쳐서 생성
+	$("#sampleText,#sampleImage").notice("combine");
+})
+</script>
+<title>Site Notices</title>
+</head>
+<body>
+	<div id="sampleText" style="display:none;">
+		<pre>
+	Hello Notices!!
+	
+	
+		</pre>
+	</div>
+	<div id="sampleImage" style="display:none;">
+		<img src="sample.jpg" style="max-width:490px;height:auto;" >
+	</div>
+
+</body>
+</html>
