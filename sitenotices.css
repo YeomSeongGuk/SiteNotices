@@ -18,7 +18,7 @@
 
 .siteNoticesContents {padding:10px ;line-height:1.5em;font-size:13px;}    
 
-.siteNoticesCloseToday {height:27px;line-height:27px;background-color:#2587c3;color:#d3e7f3;border-radius:0 0 3px 3px;-webkit-border-radius:0 0 3px 3px;-moz-border-radius:0 0 3px 3px;}
+.siteNoticesCloseToday {height:28px;line-height:28px;background-color:#2587c3;color:#d3e7f3;border-radius:0 0 3px 3px;-webkit-border-radius:0 0 3px 3px;-moz-border-radius:0 0 3px 3px;}
     .siteNoticesCloseToday label {display:inline-block;float:left;font-size:11px;}
     .siteNoticesCloseToday label:hover {color:#fff;}
     .siteNoticesCloseToday label input {vertical-align:middle;}
