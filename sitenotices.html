@@ -9,13 +9,13 @@
 $(function(){
 	
 	//팝업 다시보기에 대한 쿠키를 삭제!
-	$("#sampleText").resetCookie("html");
-	$("#sampleText").resetCookie("image");
-	$("#sampleText").resetCookie("text");
-	$("#sampleText").resetCookie("combine");
+	$.notice.resetCookie("cookie_key");
+	$.notice.resetCookie("cookie_key1");
+	$.notice.resetCookie("cookie_key2");
+	$.notice.resetCookie("cookie_key3");
 	
 	//HTML을 이용한 메세지 출력
-	$("#sampleText").notice("html", {
+	$("#sampleText").notice("cookie_key", {
 		width : 400, 	  //너비 
 		offsetLeft : 10,  //좌측 기준 위치
 		offsetTop : 20,   //상단 기준 위치
@@ -26,21 +26,22 @@ $(function(){
 	
 	
 	//이미지를 이용한 출력
-	$("#sampleImage").notice("image", {
+	$("#sampleImage").notice("cookie_key1", {
 		offsetLeft : 10,
 		offsetTop : 200,
 		zIndex : 4000  
 	});
 	
-	//
-	$("<div></div>").html("테스트 메세지").notice("text" , {
+	//메세지를 생성하여 팝업을 띄움
+	$("<div></div>").html("테스트 메세지").notice("cookie_key2" , {
 		offsetLeft : 10,
 		offsetTop : 200,
 		zIndex : 5000   //z-Index
 	});
 	
-	//여러 Dom을 합쳐서 생성
-	$("#sampleText,#sampleImage").notice("combine");
+	//다수의 팝업을 동시에 띄움
+	//쿠키의 키를 공유함
+	$("#sampleText,#sampleImage").notice("cookie_key3");
 })
 </script>
 <title>Site Notices</title>
